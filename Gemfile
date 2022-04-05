@@ -72,3 +72,7 @@ end
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 
 gem "factory_bot", "~> 6.2"
+gem 'rubocop', require: false
+gem 'rubocop-rspec'
+gem 'rubocop-rails'
+gem 'rubocop-performance'
