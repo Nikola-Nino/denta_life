@@ -76,3 +76,4 @@ gem 'rubocop', require: false
 gem 'rubocop-rspec'
 gem 'rubocop-rails'
 gem 'rubocop-performance'
+gem 'simplecov'
