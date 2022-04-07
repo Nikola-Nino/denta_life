@@ -34,4 +34,4 @@
 !/app/assets/builds/.keep
 
 .DS_Store
-coverage
+coverage/
