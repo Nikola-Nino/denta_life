@@ -7,15 +7,11 @@ require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
+require 'support/shoulda_matchers'
+# Add additional requires below this line. Rails is not loaded until this point!
+require 'support/factory_bot'
+
 require 'simplecov'
-
-Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :rspec
-    with.library :rails
-  end
-end
-
 SimpleCov.start do
   add_filter '/spec/'
   add_filter '/config/'
