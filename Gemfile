@@ -29,6 +29,7 @@ gem "tailwindcss-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+gem 'email_validator'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -71,7 +72,7 @@ end
 
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 
-gem "factory_bot", "~> 6.2"
+gem 'factory_bot_rails'
 gem 'rubocop', require: false
 gem 'rubocop-rspec'
 gem 'rubocop-rails'
