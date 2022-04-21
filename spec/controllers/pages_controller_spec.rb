@@ -22,7 +22,7 @@ describe PagesController, type: :controller do
       it 'creates new contact' do
         expect do
           post :create_contact,
-                params: { contact: { full_name: 'Random Name', email: 'test@test.com',
+               params: { contact: { full_name: 'Random Name', email: 'test@test.com',
                                     message: 'Add somne message.', phone: 'Enter phone number' } }
         end.to change(Contact, :count).by(1)
       end
