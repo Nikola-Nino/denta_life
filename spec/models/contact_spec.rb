@@ -9,6 +9,7 @@ RSpec.describe Contact, type: :model do
     it { expect(contact).to be_valid }
     it { expect(contact).to validate_presence_of(:full_name) }
     it { expect(contact).to validate_presence_of(:email).with_message(/is invalid/) }
+    it { expect(contact).to validate_presence_of(:phone) }
     it { expect(contact).to validate_presence_of(:message) }
   end
 end
