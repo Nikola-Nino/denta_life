@@ -23,8 +23,18 @@ describe PagesController, type: :controller do
         expect do
           post :create_contact,
                params: { contact: { full_name: 'Random Name', email: 'test@test.com',
-                                    message: 'Add somne message.', phone: 'Enter phone number' } }
+                                    message: 'Add some message.', phone: '+3897777777' } }
         end.to change(Contact, :count).by(1)
+      end
+    end
+
+    context 'with invalid attributes' do
+      it 'does not create new contact' do
+        expect do
+          post :create_contact,
+               params: { contact: { full_name: '', email: '',
+                                    message: '', phone: '1234-5678' } }
+        end.to change(Contact, :count).by(0)
       end
     end
   end
