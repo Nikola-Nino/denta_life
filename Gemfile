@@ -71,7 +71,7 @@ group :development do
 end
 
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
-
+gem 'devise'
 gem 'factory_bot_rails'
 gem 'rubocop', require: false
 gem 'rubocop-rspec'
