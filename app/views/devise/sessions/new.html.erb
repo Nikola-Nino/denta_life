@@ -8,20 +8,17 @@
 					</div>
 					<!-- Col -->
 					<div class="w-full lg:w-6/12 bg-gray-200 p-16 rounded-r-lg">
-						<h3 class="pt-4 text-2xl text-center">Create an Account!</h3>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
       <div class="text-left p-0 font-sans">
         <h1 class=" text-gray-800 text-3xl font-medium">Welcome back</h1>
       </div>
 
-
       <div class="mt-5">
         <%= f.label :email, class:"block w-full p-2 border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent "
             placeholder="E-mail" %>
         <%= f.text_field :email, required: true, autofocus: true, autocomplete: "email", class:"block w-full p-2 border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent" %>
       </div>
-
 
       <div class="mt-5">
         <%= f.label :password, class:"block w-full p-2 border rounded border-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-transparent "
