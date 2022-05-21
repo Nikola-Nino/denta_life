@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :treatment do
     full_name { Faker::Name.name }
@@ -7,4 +9,3 @@ FactoryBot.define do
     special_conditions_and_additional_notes { Faker::Lorem.paragraphs(number: 1).join('.') }
   end
 end
-

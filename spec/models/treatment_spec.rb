@@ -16,4 +16,3 @@ RSpec.describe Treatment, type: :model do
     it { expect(treatment).to validate_presence_of(:special_conditions_and_additional_notes) }
   end
 end
-
