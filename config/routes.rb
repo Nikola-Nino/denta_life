@@ -9,9 +9,11 @@ Rails.application.routes.draw do
   get "/articles", to: "pages#articles"
   post '/create_contact', to: 'pages#create_contact'
 
+
   namespace :dashboard do
     get '/home', to: 'pages#home'
     root to: 'pages#home'
+    resources :treatments
   end
 
   root to: "pages#home"

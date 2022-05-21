@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# frozen_string_literal: true
+
+require 'factory_bot_rails'
+include FactoryBot::Syntax::Methods
+
+USERS = rand(1..5)
+
+puts 'Seeding users and treatments'
+USERS.times do |i|
+  user = i.zero? ? create(:user, email: 'user@test.com') : create(:user)
+
+  # Create couple treatments per user
+  rand(4..7).times { create(:treatment, user: user) }
+end
