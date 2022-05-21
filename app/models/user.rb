@@ -6,6 +6,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :treatments, dependent: :destroy
+
   validates :first_name, :last_name, :phone, :username, :date_of_birth, presence: true
   validates :email, email: { mode: :strict }
+
+  # validates :role, in: AVAILABLE_ROLES
+
+  # AVAILABLE_ROLES = ['doctor', 'patient'].freeze
+  # PATIENT = 'patient'.freeze
+  # DOCTOR = 'doctor'.freeze
 end
