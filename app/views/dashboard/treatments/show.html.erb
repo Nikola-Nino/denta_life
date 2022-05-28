@@ -1,0 +1,9 @@
+<% if @images_empty %>
+    <p> No images attached</p>
+<% else %>
+    <% @treatment.images.each do |image| %>
+        <%= image_tag url_for(image) %>
+    <% end %>
+<% end %>
+
+
