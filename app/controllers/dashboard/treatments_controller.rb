@@ -20,8 +20,7 @@ module Dashboard
       @treatment.user_id = current_user.id
 
       if @treatment.save
-        # redirect_to dashboard_treatments_path
-        redirect_to "/dashboard/treatments/#{@treatment.id}"
+        redirect_to dashboard_treatment_path(@treatment)
       else
         render :new
       end
