@@ -1,0 +1,32 @@
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24  flex-col">
+    <div class="lg:w-4/6  ">
+        <div class="mb-10 px-4">
+            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3"><%= @treatment.full_name %></h2>
+            <div class="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4 "></div>
+            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Diagnosis : </h2>
+            <p class="leading-relaxed text-base"> <%= @treatment.diagnosis %></p>
+            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Date of visit : </h2>
+            <p class="leading-relaxed text-base"><%= @treatment.date_of_visit %></p>
+            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Special notes : </h2>
+            <p class="leading-relaxed text-base"></p>
+
+        </div>
+        <div class="my-10 px-4">
+<h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Images :</h2>
+
+  <% if @images_empty %>
+    <p> No images attached</p>
+<% else %>
+    <% @treatment.images.each do |image| %>
+        <%= image_tag url_for(image) %>
+    <% end %>
+<% end %>
+   </div>
+    </div>
+
+  </div>
+
+ </section>
+
+
