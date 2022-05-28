@@ -12,6 +12,7 @@ require 'factory_bot_rails'
 include FactoryBot::Syntax::Methods
 
 USERS = rand(1..5)
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 puts 'Seeding users and treatments'
 USERS.times do |i|
