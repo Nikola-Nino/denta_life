@@ -2,7 +2,7 @@
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-wrap w-full mb-20">
       <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900"><%= @treatments.empty? ? 'No Posts are created yet' : 'Your Treatments ' %></h1>
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900"><%= @treatments.empty? ? 'No Treatments are created yet' : 'Your Treatments ' %></h1>
         <div class="h-1 w-20 bg-indigo-500 rounded"></div>
       </div>
     </div>
@@ -13,8 +13,18 @@
           <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font"><%= treatment.full_name %></h3>
           <h2 class="text-lg text-gray-900 font-medium title-font mb-4"><%= treatment.diagnosis %></h2>
           <p class="leading-relaxed text-base" style="margin-bottom: 20px;"><%= treatment.date_of_visit %></p>
-
+            <%= link_to dashboard_treatment_url(treatment), class:"flex items-center" do%>
+              <p class="mr-4">Read more</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14.125" height="13.358" viewBox="0 0 14.125 13.358">
+                <g transform="translate(-3 -3.293)">
+                  <path id="Path_7" data-name="Path 7"
+                    d="M14.189,10.739H3V9.2H14.189L9.361,4.378l1.085-1.085,6.679,6.679-6.679,6.679L9.361,15.566Z"
+                    fill="#1d1d1d" fill-rule="evenodd"></path>
+                </g>
+              </svg>
+            <% end %>
         </div>
+
       </div>
       <% end %>
     </div>

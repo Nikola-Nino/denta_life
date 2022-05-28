@@ -6,7 +6,10 @@ module Dashboard
       @treatments = current_user.treatments
     end
 
-    def show; end
+    def show
+      @treatment = Treatment.find(params[:id])
+      @images_empty = @treatment.images.empty?
+    end
 
     def new
       @treatment = Treatment.new
@@ -17,7 +20,7 @@ module Dashboard
       @treatment.user_id = current_user.id
 
       if @treatment.save
-        redirect_to dashboard_treatments_path
+        redirect_to dashboard_treatment_path(@treatment)
       else
         render :new
       end
@@ -43,7 +46,7 @@ module Dashboard
 
     def treatment_params
       params.require(:treatment).permit(:full_name, :date_of_visit, :treatment, :diagnosis,
-                                        :special_conditions_and_additional_notes)
+                                        :special_conditions_and_additional_notes, images: [])
     end
   end
 end

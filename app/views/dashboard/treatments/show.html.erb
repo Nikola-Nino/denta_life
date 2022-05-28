@@ -1,32 +1,84 @@
-<section class="text-gray-600 body-font">
-  <div class="container px-5 py-24  flex-col">
-    <div class="lg:w-4/6  ">
-        <div class="mb-10 px-4">
-            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3"><%= @treatment.full_name %></h2>
-            <div class="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4 "></div>
-            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Diagnosis : </h2>
-            <p class="leading-relaxed text-base"> <%= @treatment.diagnosis %></p>
-            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Date of visit : </h2>
-            <p class="leading-relaxed text-base"><%= @treatment.date_of_visit %></p>
-            <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Special notes : </h2>
-            <p class="leading-relaxed text-base"></p>
 
+
+
+<!-- component -->
+<!-- This is an example component -->
+<div class="min-h-screen flex items-center justify-center px-4">
+
+    <div class="max-w-4xl  bg-white w-full rounded-lg shadow-xl">
+        <div class="p-4 border-b">
+            <h2 class="text-2xl ">
+                Treatment Information
+            </h2>
+            <p class="text-sm text-gray-500">
+                Personal details.
+            </p>
         </div>
-        <div class="my-10 px-4">
-<h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">Images :</h2>
-
-  <% if @images_empty %>
+        <div>
+            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                <p class="text-gray-600">
+                    Full name
+                </p>
+                <p>
+                    <%= @treatment.full_name %>
+                </p>
+            </div>
+            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                <p class="text-gray-600">
+                    Diagnosis
+                </p>
+                <p>
+                    <%= @treatment.diagnosis %>
+                </p>
+            </div>
+            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                <p class="text-gray-600">
+                    Date of visit
+                </p>
+                <p>
+                    <%= @treatment.date_of_visit %>
+                </p>
+            </div>
+            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                <p class="text-gray-600">
+                    Treatment
+                </p>
+                <p>
+                    <%= @treatment.treatment %>
+                </p>
+            </div>
+            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                <p class="text-gray-600">
+                    Special conditions and additional notes
+                </p>
+                <p>
+                    <%= @treatment.special_conditions_and_additional_notes %>
+                </p>
+            </div>
+            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4">
+                <p class="text-gray-600">
+                    Images
+                </p>
+                <div class="space-y-2">
+                     <% if @images_empty %>
     <p> No images attached</p>
 <% else %>
     <% @treatment.images.each do |image| %>
         <%= image_tag url_for(image) %>
     <% end %>
 <% end %>
-   </div>
+
+
+                </div>
+            </div>
+        </div>
     </div>
 
-  </div>
-
- </section>
 
 
+
+    <!-- support me by buying a coffee -->
+    <a href="https://www.buymeacoffee.com/danimai" target="_blank" class="bg-purple-600 p-2 rounded-lg text-white fixed right-0 bottom-0">
+        Support me
+    </a>
+</div>
