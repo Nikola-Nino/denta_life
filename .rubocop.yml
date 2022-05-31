@@ -20,7 +20,7 @@ Style/Documentation:
   Enabled: false
 
 RSpec/MultipleExpectations:
-  Max: 4
+  Max: 7
 
 Metrics/BlockLength:
   Max: 100

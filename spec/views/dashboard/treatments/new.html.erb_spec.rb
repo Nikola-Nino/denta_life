@@ -14,10 +14,10 @@ describe 'dashboard/treatments/new' do
 
   it 'displays error messages' do
     assign(:treatment, Treatment.create(full_name: '',
-  date_of_visit: '',
-  diagnosis: '',
-  treatment: '',
-  special_conditions_and_additional_notes: ''))
+                                        date_of_visit: '',
+                                        diagnosis: '',
+                                        treatment: '',
+                                        special_conditions_and_additional_notes: ''))
 
     render partial: 'form'
 
