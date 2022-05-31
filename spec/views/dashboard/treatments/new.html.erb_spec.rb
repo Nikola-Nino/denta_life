@@ -8,11 +8,16 @@ describe 'dashboard/treatments/new' do
 
     render partial: 'form'
 
-    expect(rendered).to include('Name', 'Date of visit', 'Diagnosis', 'Treatment', 'Special conditions and additional notes')
+    expect(rendered).to include('Name', 'Date of visit', 'Diagnosis', 'Treatment',
+                                'Special conditions and additional notes')
   end
 
   # it 'displays error messages' do
-  #   assign(:treatment, Treatment.create(full_name: '', date_of_visit: '', diagnosis: '', treatment: '', special_conditions_and_additional_notes: ''))
+  #   assign(:treatment, Treatment.create(full_name: '',
+                                          # date_of_visit: '',
+                                          # diagnosis: '',
+                                          # treatment: '',
+                                          # special_conditions_and_additional_notes: ''))
 
   #   render partial: 'form'
 
