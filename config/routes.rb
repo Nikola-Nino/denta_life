@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :articles
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -9,7 +10,6 @@ Rails.application.routes.draw do
   get "/home", to: "pages#home"
   get "/contact", to: "pages#contact"
   get "/about", to: "pages#about"
-  get "/articles", to: "pages#articles"
   post '/create_contact', to: 'pages#create_contact'
 
   namespace :dashboard do
