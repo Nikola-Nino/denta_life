@@ -2,6 +2,8 @@
 
 module Dashboard
   class TreatmentsController < Dashboard::DashboardController
+    before_action :authorization_check, except: [:index, :show]
+
     def index
       @treatments = current_user.treatments
     end

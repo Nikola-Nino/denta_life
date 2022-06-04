@@ -10,4 +10,8 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :phone, :username, :date_of_birth, presence: true
   validates :email, email: { mode: :strict }
+
+  def admin?
+    role == 'admin'
+  end
 end

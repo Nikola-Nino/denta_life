@@ -7,7 +7,7 @@ ActiveAdmin.register User do
   # Uncomment all parameters which should be permitted for assignment
   #
   permit_params :email, :password, :password_confirmation,
-                :first_name, :last_name, :date_of_birth, :phone, :username
+                :first_name, :last_name, :date_of_birth, :phone, :username, :role
   #
   # or
   #
@@ -22,6 +22,7 @@ ActiveAdmin.register User do
     f.inputs do
       f.input :email
       f.input :username
+      f.input :role
       f.input :first_name
       f.input :last_name
       f.input :date_of_birth
