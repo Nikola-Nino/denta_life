@@ -11,6 +11,9 @@
 
   <% if action_name != "show" %>
     <%= link_to "Show this article", dashboard_article_path(article), class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <% if ArticlePolicy.new(current_user, article).edit?  %>
+      <%= link_to 'Edit this article', edit_dashboard_article_path(article), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <% end %>
     <hr class="mt-6">
   <% end %>
 </div>

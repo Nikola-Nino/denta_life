@@ -1,13 +1,17 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register User do
+  controller do
+    include ApplicationHelper
+  end
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   # Uncomment all parameters which should be permitted for assignment
   #
   permit_params :email, :password, :password_confirmation,
-                :first_name, :last_name, :date_of_birth, :phone, :username
+                :first_name, :last_name, :date_of_birth, :phone, :username, :role
   #
   # or
   #
@@ -26,6 +30,7 @@ ActiveAdmin.register User do
       f.input :last_name
       f.input :date_of_birth
       f.input :phone
+      f.select :role, collection: available_roles
       f.input :password
       f.input :password_confirmation
     end

@@ -7,4 +7,8 @@ module ApplicationHelper
     error_tag = form_object.errors.full_messages_for(field_name).join('. ')
     content_tag(:p, error_tag, class: 'error-message')
   end
+
+  def available_roles
+    %w[manager admin]
+  end
 end

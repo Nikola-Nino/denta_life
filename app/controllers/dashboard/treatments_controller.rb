@@ -3,20 +3,24 @@
 module Dashboard
   class TreatmentsController < Dashboard::DashboardController
     def index
-      @treatments = current_user.treatments
+      @treatments = TreatmentPolicy::Scope.new(current_user, Treatment).resolve
     end
 
     def show
       @treatment = Treatment.find(params[:id])
+      authorize @treatment
       @images_empty = @treatment.images.empty?
     end
 
     def new
       @treatment = Treatment.new
+      authorize @treatment
     end
 
     def create
       @treatment = Treatment.new(treatment_params)
+      authorize @treatment
+
       @treatment.user_id = current_user.id
 
       if @treatment.save
@@ -24,22 +28,6 @@ module Dashboard
       else
         render :new
       end
-    end
-
-    def edit; end
-
-    def update
-      if @treatment.update(treatment_params)
-        redirect_to @treatment
-      else
-        render :edit
-      end
-    end
-
-    def destroy
-      @treatment.destroy
-
-      redirect_to treatments_path
     end
 
     private
