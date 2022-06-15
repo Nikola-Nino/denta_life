@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 describe Dashboard::TreatmentsController, type: :controller do
-  let!(:user) { create :user }
+  let!(:user) { create(:user, role: 'admin') }
   let(:treatment) { create(:treatment, user: user) }
   let(:treatment_attributes) { attributes_for(:treatment) }
 
