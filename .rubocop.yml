@@ -27,3 +27,10 @@ Metrics/BlockLength:
 
 RSpec/ExampleLength:
   Max: 15
+
+Rails/I18nLocaleTexts:
+  Enabled: false
+
+Lint/MissingSuper:
+  Enabled: false
+

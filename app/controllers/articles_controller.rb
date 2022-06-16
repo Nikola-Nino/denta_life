@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
-class ArticlesController < InheritedResources::Base
-  private
+class ArticlesController < ApplicationController
+  def index
+    @articles = Article.all
+  end
 
-  def article_params
-    params.require(:article).permit(:title, :content)
+  def show
+    @article = Article.find(params[:id])
   end
 end

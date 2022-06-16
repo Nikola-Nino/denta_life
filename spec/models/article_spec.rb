@@ -3,7 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
-  subject(:article) { create(:article) }
+  subject(:article) { create(:article, user: user) }
+
+  let(:user) { create :user }
 
   describe 'validations' do
     it { expect(article).to be_valid }

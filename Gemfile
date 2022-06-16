@@ -80,3 +80,5 @@ gem 'rubocop-performance'
 gem 'simplecov'
 gem 'activeadmin'
 gem 'sass-rails'
+
+gem "pundit", "~> 2.2"
