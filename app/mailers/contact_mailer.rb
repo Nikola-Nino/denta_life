@@ -5,6 +5,6 @@ class ContactMailer < ApplicationMailer
 
   def send_contact_email(contact)
     @contact = contact
-    mail(to: 'nikola_nino@outlook.com', subject: "You have new contact from #{@contact.email}")
+    mail(to: ENV['TEST_EMAIL'], subject: "You have new contact from #{@contact.email}")
   end
 end

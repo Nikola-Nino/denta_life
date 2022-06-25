@@ -96,11 +96,11 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: ENV['DENTA_LIFE_HOST'] }
 
   ActionMailer::Base.smtp_settings = {
-  :address => 'smtp.sendgrid.net',
+  :address => 'smtp.mailgun.org',
   :port => 587,
-  :user_name => 'apikey',
-  :password => ENV['SENDGRID_API_KEY'],
-  :domain => ENV['SENDGRID_DOMAIN'],
+  :user_name => 'postmaster@sandboxf8f003c5ca394eb9a4ac216bc64356a5.mailgun.org',
+  :password => ENV['MAILGUN_API_KEY'],
+  :domain => ENV['MAILGUN_DOMAIN'],
   :authentication => 'plain',
   :enable_starttls_auto => true
   }
