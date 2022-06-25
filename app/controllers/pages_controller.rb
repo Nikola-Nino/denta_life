@@ -14,6 +14,7 @@ class PagesController < ApplicationController
   def create_contact
     @contact = Contact.new(contact_params)
     if @contact.save
+      ContactMailer.send_contact_email(@contact).deliver
       redirect_to root_path, notice: t('notice_success')
 
     else

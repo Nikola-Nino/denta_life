@@ -18,6 +18,8 @@ describe PagesController, type: :controller do
   end
 
   describe 'POST create_contact' do
+    before { ENV['TEST_EMAIL'] = 'test1@example.com' }
+
     context 'with valid attributes' do
       it 'creates new contact' do
         expect do
