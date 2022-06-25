@@ -6,7 +6,9 @@ RSpec.describe ContactMailer, type: :mailer do
   describe 'notify' do
     let(:contact) { create :contact }
     let(:mail) { described_class.send_contact_email(contact) }
+
     before { ENV['TEST_EMAIL'] = 'test1@example.com' }
+
     it 'renders the subject' do
       expect(mail.subject).to eq("You have new contact from #{contact.email}")
     end
