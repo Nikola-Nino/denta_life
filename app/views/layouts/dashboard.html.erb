@@ -21,7 +21,7 @@
           class="fixed z-30 inset-y-0 left-0 w-60 transition duration-300 transform bg-white dark:bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
           <div class="flex items-center justify-center mt-8">
             <div class="flex items-center">
-              <span class="text-gray-800 dark:text-white text-2xl font-semibold">Dashboard</span>
+              <%= link_to 'Dashboard', root_path, class:"text-gray-800 dark:text-white text-2xl font-semibold" %>
             </div>
           </div>
 
@@ -73,7 +73,7 @@
                 x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
                 @click.away="dropdownOpen = false">
                 <%= link_to "Edit Profile", edit_user_registration_path, class:"block px-4 py-2 text-sm text-gray-700 hover:bg-blue-600 hover:text-white", role: "button" %>
-                <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"block px-4 py-2 text-sm text-gray-700 hover:bg-blue-600 hover:text-white", role: "button" %>
+                <%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, class:"block px-4 py-2 text-sm text-gray-700 hover:bg-blue-600 hover:text-white", role: "button" %>
               </div>
             </div>
             <button onclick="document.getElementById('sideBar').classList.toggle('hidden');"
