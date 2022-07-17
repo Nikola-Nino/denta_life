@@ -2,9 +2,8 @@
     <div class="w-full bg-center bg-cover h-[39rem]" style="background-image: url(<%= image_path 'hero-image.png' %>);">
         <div class="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-40">
             <div class="text-center">
-                <h1 class="text-2xl font-semibold text-white uppercase lg:text-3xl">Smile Solutions</h1>
-                <button
-                    class="w-full px-4 py-2 mt-4 text-sm font-medium text-white uppercase transition-colors duration-200 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">Request appointment</button>
+                <h1 class="text-2xl font-semibold text-white uppercase lg:text-3xl mb-16">Smile Solutions</h1>
+                <%= link_to 'Request appointment', contact_path, class:"w-full px-4 py-2 my-8 text-sm font-medium text-white uppercase transition-colors duration-200 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500" %>
             </div>
         </div>
     </div>
